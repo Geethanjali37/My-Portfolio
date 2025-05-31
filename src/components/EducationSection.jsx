@@ -21,7 +21,7 @@ export const EducationSection = () => {
                     {education.map((edu, index) => (
                         <div 
                             key={index}
-                            className="bg-card rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-border hover:border-primary group transform hover:-translate-y-1"
+                            className="bg-card rounded-lg p-6 mb-6 shadow-md border border-border group glow-card-hover hover:border-primary transition-all hover:shadow-xl"
                         >
                             <h3 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2 group-hover:scale-105 transition-transform">
                                 <GraduationCap className="h-5 w-5" />
