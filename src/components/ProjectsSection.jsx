@@ -54,10 +54,7 @@ export const ProjectsSection = () => {
                     {projects.map((project, index) => (
                         <div 
                             key={index}
-                            className="flex flex-col lg:flex-row gap-8 items-center"
-                            style={{
-                                flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'
-                            }}
+                            className={`flex flex-col gap-8 items-center lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
                         >
                             {/* Project Image */}
                             <div className="w-full lg:w-1/2">
@@ -74,12 +71,12 @@ export const ProjectsSection = () => {
                             </div>
 
                             {/* Project Info */}
-                            <div className="w-full lg:w-1/2 space-y-4">
+                            <div className="w-full lg:w-1/2 space-y-4 text-left">
                                 <h3 className="text-2xl font-bold text-primary">
                                     {project.title}
                                 </h3>
                                 
-                                <p className="text-muted-foreground">
+                                <p className="text-muted-foreground text-left">
                                     {project.description}
                                 </p>
                                 
