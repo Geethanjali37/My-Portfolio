@@ -33,7 +33,7 @@ export const AboutSection = () => {
                             <a
                                 href="/Geethanjali-Resume.pdf"
                                 download
-                                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 glow-card-hover"
                             >
                                 Download CV
                             </a>
@@ -45,7 +45,7 @@ export const AboutSection = () => {
                             <img 
                                 src={aboutMeImage} 
                                 alt="About Me" 
-                                className="rounded-lg transition-all duration-300 hover:shadow-xl  hover:brightness-110"
+                                className="rounded-lg transition-all duration-300 hover:shadow-[0_0_32px_8px_rgba(255,255,255,0.7)] hover:brightness-110"
                             />
                         </div>     
                     </div>
