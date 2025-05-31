@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -61,7 +62,7 @@ export const Navbar = () => {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden lg:flex space-x-8 items-center">
           {navItems.map((item) => (
             <button
               key={item.name}
@@ -71,27 +72,36 @@ export const Navbar = () => {
               {item.name}
             </button>
           ))}
+          <div className="border-l border-border pl-6">
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* mobile nav */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}{" "}
-        </button>
+        {/* mobile/tablet nav controls */}
+        <div className="flex items-center gap-6 lg:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-foreground z-50"
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <div className="border-l border-border pl-6">
+            <ThemeToggle />
+          </div>
+        </div>
 
+        {/* Mobile Menu Overlay */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
+            "transition-all duration-300 lg:hidden",
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col space-y-8 text-xl items-center">
             {navItems.map((item) => (
               <button
                 key={item.name}
