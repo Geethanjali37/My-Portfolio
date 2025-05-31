@@ -149,6 +149,24 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+@utility glow-hover {
+  @apply transition-shadow duration-300;
+  box-shadow: 0 0 0px 0px rgba(139,92,246,0.0);
+}
+.glow-hover:hover, .glow-hover:focus {
+  box-shadow: 0 0 16px 4px rgba(139,92,246,0.7), 0 0 32px 8px rgba(139,92,246,0.3);
+  outline: none;
+}
+
+@utility glow-card-hover {
+  @apply transition-shadow duration-300;
+  box-shadow: 0 0 0px 0px rgba(139,92,246,0.0);
+}
+.glow-card-hover:hover, .glow-card-hover:focus {
+  box-shadow: 0 0 32px 8px rgba(139,92,246,0.5), 0 0 64px 16px rgba(139,92,246,0.2);
+  outline: none;
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
