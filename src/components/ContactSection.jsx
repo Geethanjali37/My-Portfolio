@@ -43,24 +43,26 @@ export const ContactSection = () => {
                         <h3 className="text-2xl font-semibold text-primary mb-8">
                             Get in Touch
                         </h3>
-                        <div className="bg-card rounded-lg p-8 border border-border space-y-6">
-                            {contactLinks.map((link, index) => (
-                                <a
-                                    key={index}
-                                    href={link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                                >
-                                    <div className="p-4 rounded-xl border border-border group-hover:border-primary group-hover:bg-primary/10 transition-colors">
-                                        {link.icon}
-                                    </div>
-                                    <div className="space-y-1">
-                                        <div className="font-medium">{link.name}</div>
-                                        <div className="text-sm">{link.text}</div>
-                                    </div>
-                                </a>
-                            ))}
+                        <div className="bg-card rounded-lg p-8 border border-border">
+                            <div className="flex flex-col space-y-4">
+                                {contactLinks.map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group p-4 w-full hover:bg-primary/5 rounded-lg"
+                                    >
+                                        <div className="p-4 rounded-xl border border-border group-hover:border-primary group-hover:bg-primary/10 transition-colors">
+                                            {link.icon}
+                                        </div>
+                                        <div className="flex flex-row items-center justify-between flex-1">
+                                            <div className="font-medium text-lg">{link.name}</div>
+                                            <div className="text-sm text-muted-foreground group-hover:text-primary/80 text-right">{link.text}</div>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
