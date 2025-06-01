@@ -1,24 +1,42 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Clock } from "lucide-react";
 
 export const ContactSection = () => {
     const contactLinks = [
         {
             name: "Email",
             url: "mailto:geethanjalir.371@gmail.com",
-            icon: <Mail className="h-6 w-6" />,
+            icon: <Mail className="h-6 w-8" />,
             text: "geethanjalir.371@gmail.com"
         },
         {
             name: "GitHub",
             url: "https://github.com/Geethanjali37",
-            icon: <Github className="h-6 w-6" />,
+            icon: <Github className="h-6 w-8" />,
             text: "github.com/Geethanjali37"
         },
         {
             name: "LinkedIn",
             url: "https://linkedin.com/in/geethanjali-rambarika",
-            icon: <Linkedin className="h-6 w-6" />,
+            icon: <Linkedin className="h-6 w-8" />,
             text: "linkedin.com/in/geethanjali-rambarika"
+        }
+    ];
+
+    const contactInfo = [
+        {
+            icon: <MapPin className="h-6 w-6 text-primary" />,
+            label: "Location",
+            value: "Visakhapatnam, India"
+        },
+        {
+            icon: <Phone className="h-6 w-6 text-primary" />,
+            label: "Phone",
+            value: "+91 63008 69616"
+        },
+        {
+            icon: <Clock className="h-6 w-6 text-primary" />,
+            label: "Quick Response",
+            value: "Within 24 hours"
         }
     ];
 
@@ -36,32 +54,44 @@ export const ContactSection = () => {
                 <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
                     I'm always open to new opportunities and collaborations. Feel free to reach out!
                 </p>
+                <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center items-center">
+                    {contactInfo.map((info, idx) => (
+                        <div key={idx} className="flex items-center gap-3 bg-card rounded-lg border border-border px-4 py-3 w-full sm:w-auto glow-card-hover cursor-pointer">
+                            {info.icon}
+                            <div className="flex flex-row sm:flex-col gap-2 sm:gap-0 items-center sm:items-start">
+                                <div className="text-sm text-muted-foreground whitespace-nowrap">{info.label}</div>
+                                <div className="font-medium text-primary whitespace-nowrap">{info.value}</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Contact Links */}
                     <div className="space-y-8">
-                        <h3 className="text-2xl font-semibold text-primary mb-8">
-                            Get in Touch
-                        </h3>
-                        <div className="bg-card rounded-lg p-8 border border-border">
-                            <div className="flex flex-col space-y-4">
-                                {contactLinks.map((link, index) => (
-                                    <a
-                                        key={index}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group p-4 w-full hover:bg-primary/5 rounded-lg"
-                                    >
-                                        <div className="p-4 rounded-xl border border-border group-hover:border-primary group-hover:bg-primary/10 transition-colors">
-                                            {link.icon}
-                                        </div>
-                                        <div className="flex flex-row items-center justify-between flex-1">
-                                            <div className="font-medium text-lg">{link.name}</div>
-                                            <div className="text-sm text-muted-foreground group-hover:text-primary/80 text-right">{link.text}</div>
-                                        </div>
-                                    </a>
-                                ))}
+                        <div className="flex flex-col gap-8">
+                            <h3 className="text-2xl font-semibold text-primary mb-8">
+                                Get in Touch
+                            </h3>
+                            <div className="bg-card rounded-lg p-8 border border-border">
+                                <div className="flex flex-col gap-6">
+                                    {contactLinks.map((link, index) => (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            {...(link.name !== 'Email' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group p-4 w-full hover:bg-primary/5 rounded-lg"
+                                        >
+                                            <div className="p-0 rounded-xl border border-border group-hover:border-primary group-hover:bg-primary/10 transition-colors">
+                                                {link.icon}
+                                            </div>
+                                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between flex-1 gap-1 sm:gap-0">
+                                                <div className="font-medium text-lg">{link.name}</div>
+                                                <div className="text-sm text-muted-foreground group-hover:text-primary/80 text-right break-all">{link.text}</div>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
