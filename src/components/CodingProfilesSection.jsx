@@ -44,7 +44,7 @@ export const CodingProfilesSection = () => {
                         return (
                             <div
                                 key={index}
-                                className="bg-card rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-border h-full hover:border-primary flex flex-col items-center text-center"
+                                className="bg-card rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-border h-full hover:border-primary flex flex-col items-center text-center glow-card-hover"
                             >
                                 <div className="flex items-center gap-3 mb-6">
                                     <img src={profile.logo} alt={profile.platform + ' logo'} className="h-10 w-10 object-contain" />
