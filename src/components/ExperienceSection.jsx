@@ -38,13 +38,13 @@ export const ExperienceSection = () => {
                 </h2>
                 <div className="relative flex flex-col items-center w-full">
                     <div className="w-full flex flex-col relative">
-                        {/* Vertical line */}
-                        <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 border-l-2 border-dotted border-primary/40 z-0" />
+                        {/* Single vertical dotted line: left on mobile, center on md+ */}
+                        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 -translate-x-0 md:-translate-x-1/2 border-l-2 border-dotted border-primary/40 z-0" />
                         {experiences.map((exp, index) => (
-                            <div key={index} className="flex items-start min-h-[80px] w-full relative z-10">
-                                {/* Left side (card or empty) */}
+                            <div key={index} className="w-full flex items-start min-h-[80px] relative z-10">
+                                {/* Left side (card or empty) for zig-zag on md+, single column on mobile */}
                                 {index % 2 === 0 ? (
-                                    <div className="w-1/2 flex justify-end pr-2 sm:pr-6">
+                                    <div className="hidden md:flex w-1/2 justify-end pr-2 sm:pr-6">
                                         <div className="bg-card rounded-lg p-6 mb-6 shadow-md border border-border w-full max-w-md group glow-card-hover hover:border-primary transition-all">
                                             <div className="flex flex-col gap-2">
                                                 <h3 className="text-xl font-semibold text-primary group-hover:scale-105 transition-transform">
@@ -60,7 +60,7 @@ export const ExperienceSection = () => {
                                                 </div>
                                             </div>
                                             <div className="mt-4">
-                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground text-left">
                                                     {exp.responsibilities.map((resp, respIndex) => (
                                                         <li key={respIndex} className="pl-2 group-hover:text-foreground transition-colors">{resp}</li>
                                                     ))}
@@ -69,18 +69,15 @@ export const ExperienceSection = () => {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="w-1/2" />
+                                    <div className="hidden md:flex w-1/2" />
                                 )}
-                                {/* Center: star and dotted line */}
-                                <div className="flex flex-col items-center justify-start min-h-full z-20">
+                                {/* Center: star only (no per-item line) */}
+                                <div className="flex flex-col items-center justify-start min-h-full z-20 md:w-auto w-12">
                                     <GlowyStar className="group" />
-                                    {index !== experiences.length - 1 && (
-                                        <div className="w-1 flex-1 border-dotted border-l-2 border-primary/40 min-h-[60px] my-1" />
-                                    )}
                                 </div>
-                                {/* Right side (card or empty) */}
+                                {/* Right side (card or empty) for zig-zag on md+, single column on mobile */}
                                 {index % 2 !== 0 ? (
-                                    <div className="w-1/2 flex justify-start pl-2 sm:pl-6">
+                                    <div className="hidden md:flex w-1/2 justify-start pl-2 sm:pl-6">
                                         <div className="bg-card rounded-lg p-6 mb-6 shadow-md border border-border w-full max-w-md group glow-card-hover hover:border-primary transition-all">
                                             <div className="flex flex-col gap-2">
                                                 <h3 className="text-xl font-semibold text-primary group-hover:scale-105 transition-transform">
@@ -96,7 +93,7 @@ export const ExperienceSection = () => {
                                                 </div>
                                             </div>
                                             <div className="mt-4">
-                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground text-left">
                                                     {exp.responsibilities.map((resp, respIndex) => (
                                                         <li key={respIndex} className="pl-2 group-hover:text-foreground transition-colors">{resp}</li>
                                                     ))}
@@ -105,8 +102,33 @@ export const ExperienceSection = () => {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="w-1/2" />
+                                    <div className="hidden md:flex w-1/2" />
                                 )}
+                                {/* Mobile: always show card full width */}
+                                <div className="flex md:hidden flex-1">
+                                    <div className="bg-card rounded-lg p-6 mb-6 shadow-md border border-border w-full group glow-card-hover hover:border-primary transition-all">
+                                        <div className="flex flex-col gap-2">
+                                            <h3 className="text-xl font-semibold text-primary group-hover:scale-105 transition-transform">
+                                                {exp.title}
+                                            </h3>
+                                            <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary/80 transition-colors">
+                                                <Building2 className="h-4 w-4" />
+                                                <span>{exp.company}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary/80 transition-colors">
+                                                <Calendar className="h-4 w-4" />
+                                                <span>{exp.duration}</span>
+                                            </div>
+                                        </div>
+                                        <div className="mt-4">
+                                            <ul className="list-disc list-inside space-y-2 text-muted-foreground text-left">
+                                                {exp.responsibilities.map((resp, respIndex) => (
+                                                    <li key={respIndex} className="pl-2 group-hover:text-foreground transition-colors">{resp}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
