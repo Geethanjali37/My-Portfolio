@@ -25,7 +25,7 @@ export const AchievementsSection = () => {
                     {achievements.map((achievement, index) => (
                         <div
                             key={index}
-                            className="group relative bg-card rounded-lg p-6 w-full md:w-1/2 hover:shadow-xl transition-all duration-300 border border-border hover:border-primary max-w-md"
+                            className="group relative bg-card rounded-lg p-6 w-full md:w-1/2 border border-border max-w-md glow-card-hover"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-primary rounded-t-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                             <div className="flex flex-col items-center text-center gap-4">
