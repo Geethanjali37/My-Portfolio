@@ -45,7 +45,7 @@ export const SkillsSection = () => {
                     {skillCategories.map((category, index) => (
                         <div
                             key={index}
-                            className="bg-card rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-border group hover:border-primary"
+                            className="bg-card rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-border group hover:border-primary glow-card-hover"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="text-primary p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
