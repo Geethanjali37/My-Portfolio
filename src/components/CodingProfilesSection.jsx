@@ -8,16 +8,16 @@ export const CodingProfilesSection = () => {
             logo: "/leetcode-logo.png",
             rating: "1500+",
             solved: 390,
-            maxSolved: 1500,
+            maxSolved: 1000,
             link: "https://leetcode.com/geethanjali_37",
         },
         {
             platform: "CodeChef",
             username: "geethanjali_73",
             logo: "/codechef-logo.png",
-            rating: "2⭐(1580)",
+            rating: "3⭐(1631)",
             solved: 150,
-            maxSolved: 1000,
+            maxSolved: 600,
             link: "https://codechef.com/users/geethanjali_73",
         },
         {
@@ -26,7 +26,7 @@ export const CodingProfilesSection = () => {
             logo: "/gfg-logo.png",
             rating: "1500+",
             solved: 200,
-            maxSolved: 900,
+            maxSolved: 600,
             link: "https://www.geeksforgeeks.org/user/geethanjali_37/",
         }
     ];
