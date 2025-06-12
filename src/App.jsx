@@ -5,9 +5,20 @@ import { useTheme } from "./hooks/useTheme";
 import { StarBackground } from "./components/StarBackground";
 import { LightThemeBackground } from "./components/LightThemeBackground";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { LoadingScreen } from "./components/LoadingScreen";
+import { useState } from "react";
 
 function App() {
   const { theme } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
 
   return (
     <main className="min-h-screen bg-background text-foreground">
