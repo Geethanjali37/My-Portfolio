@@ -50,7 +50,7 @@ export const LoadingScreen = ({ onLoadingComplete }) => {
                     <img 
                         src="/logo-light.png" 
                         alt="Logo" 
-                        className="w-40 h-40 object-contain animate-pulse-subtle"
+                        className="w-44 h-44 object-cover rounded-full scale-110 animate-pulse-subtle"
                     />
                 </div>
 
