@@ -1,4 +1,4 @@
-import { Award ,StarIcon } from "lucide-react";
+import { Award ,StarIcon,TrophyIcon } from "lucide-react";
 
 export const AchievementsSection = () => {
     const achievements = [
@@ -9,23 +9,28 @@ export const AchievementsSection = () => {
         },
         {
             icon: <StarIcon className="w-20 h-8 text-primary" />,
-            title: "2 Star Coder",
-            description: "2 Star coder at CodeChef,max-rating 1580"
+            title: "3 Star Coder",
+            description: "3 Star coder at CodeChef,max-rating 1631"
+        },
+        {
+            icon: <TrophyIcon className="w-20 h-8 text-primary" />,
+            title: "ServiceNow Certified System Administrator",
+            description: "Global certification from ServiceNow"
         }
     ];
 
     return (
         <section id="achievements" className="py-24 px-4 relative">
-            <div className="container mx-auto max-w-2xl">
+            <div className="container mx-auto max-w-7xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     Achievements
                 </h2>
 
-                <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                     {achievements.map((achievement, index) => (
                         <div
                             key={index}
-                            className="group relative bg-card rounded-lg p-6 w-full md:w-1/2 border border-border max-w-md glow-card-hover"
+                            className="group relative bg-card rounded-lg p-6 w-full border border-border glow-card-hover"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-primary rounded-t-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                             <div className="flex flex-col items-center text-center gap-4">
