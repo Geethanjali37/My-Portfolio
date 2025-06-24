@@ -3,6 +3,22 @@ import { Github, ExternalLink } from "lucide-react";
 export const ProjectsSection = () => {
     const projects = [
         {
+            title: "WinkChat - A Real-Time Chat Application",
+            description: "A MERN stack-based real-time chat app with user authentication, one-to-one messaging, and live socket-based communication. Designed with a clean UI and responsive design using Tailwind CSS.",
+            techStack: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Tailwind CSS"],
+            githubLink: "https://github.com/Geethanjali37/CHAT-APP",
+            demoLink: "https://chat-app-jam0.onrender.com/",
+            image: "/winkchat.png"
+        },
+        {
+            title: "IQ MindSprint Quiz Game",
+            description: "A fun and engaging quiz application built with React, Vite, and Tailwind CSS. It tests users on logical reasoning, IQ, pattern recognition, and riddles, helping improve cognitive skills in an interactive way.",
+            techStack: ["React", "Vite", "Tailwind CSS", "JavaScript"],
+            githubLink: "https://github.com/Geethanjali37/QUIZ-GAME",
+            demoLink: "https://quiz-gam.netlify.app/", 
+            image: "/quizgame.png" 
+        },
+        {
             title: "Disease Prediction System",
             description: "A Disease Prediction System using Machine Learning, which predicts whether an individual is diabetic, has heart disease, or is at risk for Parkinson's disease based on health-related inputs",
             techStack: ["Python", "Machine Learning", "Streamlit","Data Analysis"],
@@ -13,7 +29,7 @@ export const ProjectsSection = () => {
         {
             title: "My Portfolio",
             description: "This project is a modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS. It showcases my skills, projects, achievements, and experience as a Full Stack Developer and Competitive Programmer.",
-            techStack: ["React(with Vite)","TypeScript","Tailwind CSS","React Context API"],
+            techStack: ["React(with Vite)","JavaScript","Tailwind CSS","React Context API"],
             githubLink: "https://github.com/Geethanjali37/My-Portfolio",
             demoLink: "https://geethanjalir-portfolio.netlify.app/",
             image: "/my-portfolio.png"
