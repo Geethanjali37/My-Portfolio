@@ -26,14 +26,14 @@ export const ProjectsSection = () => {
             demoLink: "https://nvs4thmv67633kwhmjmsxu.streamlit.app/",
             image: "/dp.png"
         },
-        {
-            title: "My Portfolio",
-            description: "This project is a modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS. It showcases my skills, projects, achievements, and experience as a Full Stack Developer and Competitive Programmer.",
-            techStack: ["React(with Vite)","JavaScript","Tailwind CSS","React Context API"],
-            githubLink: "https://github.com/Geethanjali37/My-Portfolio",
-            demoLink: "https://geethanjalir-portfolio.netlify.app/",
-            image: "/my-portfolio.png"
-        },
+        // {
+        //     title: "My Portfolio",
+        //     description: "This project is a modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS. It showcases my skills, projects, achievements, and experience as a Full Stack Developer and Competitive Programmer.",
+        //     techStack: ["React(with Vite)","JavaScript","Tailwind CSS","React Context API"],
+        //     githubLink: "https://github.com/Geethanjali37/My-Portfolio",
+        //     demoLink: "https://geethanjalir-portfolio.netlify.app/",
+        //     image: "/my-portfolio.png"
+        // },
         {
             title: "Tourist Compass",
             description: "Tourist Compass is a responsive, user-friendly travel guide website that helps users explore popular tourist destinations across India. Built using HTML, CSS, and JavaScript, this project presents a beautifully designed platform to browse through iconic locations categorized by region",
@@ -128,3 +128,4 @@ export const ProjectsSection = () => {
         </section>
     );
 };
+
